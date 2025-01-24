@@ -31,24 +31,24 @@ func main() {
 		return
 	}
 
-	Principal,err:= strconv.ParseFloat(values[0] , 64)
+	principal,err:= strconv.ParseFloat(values[0] , 64)
 	if err != nil {
 		fmt.Errorf("Not a Number")
 		return
 	}
 
-	Rate,err := strconv.ParseFloat(values[1] , 64)
+	rate,err := strconv.ParseFloat(values[1] , 64)
 	if err != nil {
 		fmt.Errorf("Not a Number")
 		return
 	}
 
-	Time,err:= strconv.ParseFloat(values[2] , 64)
+	time,err:= strconv.ParseFloat(values[2] , 64)
 	if err != nil {
 		fmt.Errorf("Not a Number")
 		return
 	}
 
-	Compound_Interest := Principal * Rate * Time / 100 
-	fmt.Printf("Compound Interest is: %.2f" , Compound_Interest)
+	compoundInterest := principal * rate * time / 100 
+	fmt.Printf("Compound Interest is: %.2f" , compoundInterest)
 }
