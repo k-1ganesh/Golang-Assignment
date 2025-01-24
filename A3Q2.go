@@ -26,7 +26,12 @@ import (
 
 func main() {
 	reader := bufio.NewReader(os.Stdin) 
-	input,_ := reader.ReadString('\n')
+	input,err := reader.ReadString('\n')
+	if err != nil {
+		fmt.Println("Error in reading string")
+		return
+	}
+
 	input = strings.TrimSpace(input) 
 	values := strings.Split(input ," ") 
 	mp := map[string]int{} 
@@ -39,10 +44,17 @@ func main() {
 			max = value 
 		}
 	}
+	visited := make(map[string]bool)
+	for key , _ := range mp {
+         visited[key] = false
+	} 
 	ans := []string{} 
-	for key ,value := range mp {
-		if value == max {
-           ans = append(ans , key)
+	for _,value:= range values{
+        if visited[value] == false {
+			if mp[value] == max {
+				ans = append(ans, value)
+			}
+			visited[value] = true;
 		}
 	}
 	fmt.Println(ans)
