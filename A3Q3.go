@@ -24,13 +24,13 @@ package main
 import "fmt" 
 
 func main() {
-	Array := []string{"qwe", "wer", "ert", "rty", "tyu", "yui", "uio", "iop"} 
+	array := []string{"qwe", "wer", "ert", "rty", "tyu", "yui", "uio", "iop"} 
 	var index1 , index2 int 
 	fmt.Scanln(&index1,&index2) 
-	if index1 < len(Array) && index2 < len(Array) && index2 >= 0 && index1 >= 0 {
-         fmt.Println(Array[:index1+1]) 
-		 fmt.Println(Array[index1:index2+1])
-		 fmt.Println(Array[index2:])
+	if index1 < len(array) && index2 < len(array) && index2 >= 0 && index1 >= 0 {
+         fmt.Println(array[:index1+1]) 
+		 fmt.Println(array[index1:index2+1])
+		 fmt.Println(array[index2:])
 	} else {
 		fmt.Println("Incorrect Indexes")
 	}
