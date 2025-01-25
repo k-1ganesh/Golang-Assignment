@@ -31,7 +31,8 @@ func main() {
 	value , ok := mp[index] 
 	if ok {
         fmt.Println(value)
-	} else {
-		fmt.Println("Not a day")
+		return
 	}
+	fmt.Println("Not a day")
+	
 }
