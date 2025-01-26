@@ -27,11 +27,11 @@ func main() {
 	array := []string{"qwe", "wer", "ert", "rty", "tyu", "yui", "uio", "iop"} 
 	var index1 , index2 int 
 	fmt.Scanln(&index1,&index2) 
-	if index1 < len(array) && index2 < len(array) && index2 >= 0 && index1 >= 0 {
+	if index1 < len(array) && index2 < len(array) && index2 >= 0 && index1 >= 0 && index1 <= index2 {
          fmt.Println(array[:index1+1]) 
 		 fmt.Println(array[index1:index2+1])
 		 fmt.Println(array[index2:])
-	} else {
-		fmt.Println("Incorrect Indexes")
+		 return
 	}
+	fmt.Println("Incorrect Indexes")
 }
