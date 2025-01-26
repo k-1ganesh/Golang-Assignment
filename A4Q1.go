@@ -32,15 +32,15 @@ func AcceptAnything(val interface{}) {
 		fmt.Printf("This is the value of type String , %v", v)
 	case bool:
 		fmt.Printf("This is the value of type Boolean , %v", v)
-	case Student:
-		fmt.Printf("This is the value of type Student , %v", v)
+	case Hello:
+		fmt.Printf("This is the value of type Hello , %v", v)
 	default:
 		fmt.Println("Value of Unknown type is passed.")
 	}
 
 }
 
-type Student struct {
+type Hello struct {
 	name string
 }
 
@@ -51,13 +51,20 @@ func main() {
 
 	if input == 1 {
 		AcceptAnything(10)
-	} else if input == 2 {
+		return
+	} 
+	if input == 2 {
 		AcceptAnything("Ganesh")
-	} else if input == 3 {
-		AcceptAnything(true)
-	} else if input == 4 {
-		AcceptAnything(Student{name: "Ganesh"})
-	} else {
-		fmt.Println("Enter valid input")
+		return
 	}
+	if input == 3 {
+		AcceptAnything(true)
+		return
+	}
+	if input == 4 {
+		AcceptAnything(Hello{name: "Ganesh"})
+		return
+	}
+	fmt.Println("Enter valid input")
+	
 }
