@@ -59,11 +59,13 @@ func main() {
 	if choice == 1 {
 		rect := rectangle{length: 10, breadth: 15}
 		print(rect)
-
-	} else if choice == 2 {
+		return
+	}
+	if choice == 2 {
 		sq := square{side: 15}
 		print(sq)
-	} else {
-		fmt.Println("Enter the correct choice")
+		return
 	}
+	fmt.Println("Enter the correct choice")
+
 }
