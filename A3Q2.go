@@ -34,7 +34,7 @@ func main() {
 
 	input = strings.TrimSpace(input) 
 	values := strings.Split(input ," ") 
-	mp := map[string]int{} 
+	var mp = make(map[string]int) 
     for _,value := range values{
 		mp[value]++ 
 	}
