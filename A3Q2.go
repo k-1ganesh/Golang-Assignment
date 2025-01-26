@@ -16,45 +16,40 @@ Output: [is]
 Here, the word "is" appeared twice which is also the highest frequency of any word
 */
 
-package main 
+package main
+
 import (
-	"fmt" 
-	"os" 
 	"bufio"
+	"fmt"
+	"os"
 	"strings"
 )
 
 func main() {
-	reader := bufio.NewReader(os.Stdin) 
-	input,err := reader.ReadString('\n')
+	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString('\n')
 	if err != nil {
 		fmt.Println("Error in reading string")
 		return
 	}
 
-	input = strings.TrimSpace(input) 
-	values := strings.Split(input ," ") 
-	var mp = make(map[string]int) 
-    for _,value := range values{
-		mp[value]++ 
+	input = strings.TrimSpace(input)
+	values := strings.Split(input, " ")
+	var mp = make(map[string]int)
+	for _, value := range values {
+		mp[value]++
 	}
-	max := 0 
+	max := 0
 	for _, value := range mp {
 		if value > max {
-			max = value 
+			max = value
 		}
 	}
-	visited := make(map[string]bool)
-	for key , _ := range mp {
-         visited[key] = false
-	} 
-	ans := []string{} 
-	for _,value:= range values{
-        if visited[value] == false {
-			if mp[value] == max {
-				ans = append(ans, value)
-			}
-			visited[value] = true;
+	ans := []string{}
+	for _, value := range values {
+		if mp[value] == max {
+			ans = append(ans, value)
+			mp[value] = 0 // This is done to make sure that string is considered only once.
 		}
 	}
 	fmt.Println(ans)
